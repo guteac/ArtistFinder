@@ -14,6 +14,11 @@ a {
     color: inherit;
 }
 
+input, button {
+    border: none;
+    font: inherit;
+}
+
 /* KEY FRAMES */
 @keyframes fade-in {
     0% {
@@ -29,6 +34,8 @@ a {
 
 /* BASE STYLES */
 html {
+    --accent-color: #11a2f3;
+    --accent-color-dark: #0d8fda;
     overflow-x: hidden;
 }
 
@@ -81,35 +88,103 @@ body {
 
 .link--btn {
     color: #fff;
-    background-color: #11a2f3;
+    background-color: var(--accent-color);
     border-radius: 3px;
     padding: 10px 18px;
     transition: all 0.4s;
 }
 
 .link--btn:hover {
-    background-color: #0d8fda;
+    background-color: var(--accent-color-dark);
 }
 
 /* MAIN */
 .main {
     max-width: 1150px;
     background-color: #fff;
-    height: 1000px;
     margin: 0 auto;
     margin-bottom: 35px;
     border-radius: 5px;
     box-shadow: 0 4px 44px rgba(0, 0, 0, 0.2);
     animation: fade-in 0.4s 0.1s backwards;
+    overflow: hidden;
 }
 
 .intro {
     display: flex;
+    background-color: #000;
 }
 
 .search {
     flex: 1;/* will take all available space*/
     background-color: #f3f5fa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 15px;
+}
+
+.first-heading {
+    font-size: 38px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    max-width: 383px;
+    line-height: 1.1;
+}
+
+.emphasis {
+    font-style: italic;
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.form {
+    width: 383px;
+    position: relative;
+}
+
+.input {
+    width: 100%;/* 100% of the parente element */
+    height: 60px;
+    font-size: 17px;
+    padding-left: 53px;
+    margin-bottom: 12px;
+    border-radius: 2px;
+}
+
+.input-icon {
+    position: absolute;
+    font-size: 17px;
+    color:#adb4c2;
+}
+
+.input-icon:nth-of-type(1) {
+    top: 22px;
+    left: 22px;
+}
+
+.input-icon:nth-of-type(2) {
+    top: 95px;
+    left: 22px;
+}
+
+.btn {
+    width: 100%;/* 100% of the parent element */
+    color: #fff;
+    background-color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 2px;
+    height: 60px;
+    transition: all 0.4s;
+}
+
+.btn:hover {
+    background-color: var(--accent-color-dark);
+    cursor: pointer;
 }
 
 .photos {
@@ -122,4 +197,115 @@ body {
 
 .photo-2 {
     display: block;
+}
+
+/* CREDENTIALS */
+.credentials {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 35px 0;
+    border-bottom: 1px solid #f2f3f8;
+}
+
+.seen-text {
+    font-size: 22px;
+    font-weight: 500;
+    color: #ccd0d9;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* HOW IT WORKS */
+.how {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 65px;
+    margin-bottom: 85px;
+}
+
+.second-heading {
+    font-size: 32px;
+    color: #292c33;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.steps {
+    display: flex;
+    text-align: center;
+    width: 100%;
+    justify-content: space-evenly;
+    margin: 80px 0;
+}
+
+.step {
+    max-width: 215px;
+}
+
+.step-icon {
+    height: 65px;
+    width: 65px;
+    background-color: #000;
+    color: #fff;
+    font-size: 22px;
+    margin-bottom: 21px;
+    border-radius: 65px;
+    margin-bottom: 21px;
+}
+
+.step-icon::before {
+    vertical-align: -85%;
+}
+
+.step:nth-child(1) .step-icon {/* in the first child of step class, pick step-icon */
+    background-color: #fdf6de;
+    color: #f5ca36;
+}
+  
+.step:nth-child(2) .step-icon {
+    background-color: #ffdeec;
+    color: #da196a;
+}
+  
+.step:nth-child(3) .step-icon {
+    background-color: #e9e5ff;
+    color: #4d31e4;
+}
+
+.third-heading {
+    font-size: 23px;
+    font-weight: 500;
+    color: #3d4048;
+    margin-bottom: 10px;
+}
+
+.step-info {
+    max-width: 100%;
+    font-size: 18px;
+    color: #74777d;
+}
+
+.more {
+    color: var(--accent-color);
+    font-size: 18px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--accent-color);
+    transition: all 0.4s;
+}
+
+.more:hover{
+    color: var(--accent-color-dark);
+}
+
+.more-icon {
+    font-size: 14px;
+    color: var(--accent-color);
+    transition: all 0.4s;  
+}
+
+.more:hover .more-icon{
+    color: var(--accent-color-dark);
+    transform: translateX(3px);
 }
